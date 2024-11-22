@@ -1,1 +1,7 @@
 datasets/
+YOLO-detect-v3/
+YOLO-freeze-v2/
+YOLO-head/
+YOLO-s/
+YOLO-segment-v3/
+runs/

@@ -6,8 +6,22 @@ import time
 import os
 
 # Load the YOLO models
-detect_model_path = "best_models/detect.pt"
-segment_model_path = "best_models/segment.pt"
+
+
+
+# trained-heads only
+detect_model_path = "YOLO-head/yolo11n-train/weights/best.pt"
+segment_model_path = "YOLO-head/yolo11n-seg-train/weights/best.pt"
+
+# YOLO-s
+# detect_model_path = "YOLO-s/yolo11s-train/weights/best.pt"
+# segment_model_path = "YOLO-s/yolo11s-seg-train/weights/best.pt"
+
+# YOLO-n
+# detect_model_path = "YOLO-detect-v3/train1/weights/best.pt"
+# segment_model_path = "YOLO-segment-v3/train1/weights/best.pt"
+
+
 
 # Set-up CUDA device
 os.environ["CUDA_DEVICE_ORDER"]="PCI_BUS_ID" 
