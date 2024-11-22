@@ -1,0 +1,5 @@
+opencv-python
+ultralytics
+gradio>=5.0
+gradio-webrtc
+numpy
