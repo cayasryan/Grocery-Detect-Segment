@@ -85,7 +85,7 @@ def detection(image, conf_threshold=0.3):
     fps = 1 / (end_time - last_frame_time)
     last_frame_time = end_time
     cv2.putText(image, f"FPS: {fps:.2f}", (10, 80), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 3)
-    return image, fps
+    return image
 
 # Define the function to process the webcam input for segmentation
 def segmentation(image, conf_threshold=0.3):
@@ -132,7 +132,7 @@ def segmentation(image, conf_threshold=0.3):
     last_frame_time = end_time
     cv2.putText(image, f"FPS: {fps:.2f}", (10, 80), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 255, 0), 3)
 
-    return image, fps
+    return image
 
 # Define the function to process the image based on the selected mode
 def process_image(image, conf_threshold, mode):
