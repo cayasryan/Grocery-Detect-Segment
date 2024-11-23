@@ -4,18 +4,23 @@ import numpy as np
 from ultralytics import YOLO
 import time
 import os
+import torch
 
 # Load the YOLO models
-detect_model_path = "best_models/YOLOn-head.pt"
-segment_model_path = "best_models/YOLOn-seg-head.pt"
+# detect_model_path = "best_models/YOLOn-head.pt"
+# segment_model_path = "best_models/YOLOn-seg-head.pt"
 
-
+detect_model_path = "best_models/YOLOs.pt"
+segment_model_path = "best_models/YOLOs-seg.pt"
 
 
 # Set-up CUDA device
 os.environ["CUDA_DEVICE_ORDER"]="PCI_BUS_ID" 
 # use a specific GPU
 os.environ["CUDA_VISIBLE_DEVICES"]="4"
+
+# Use GPU for inference
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 # Load the YOLO models using ultralytics
 detect_model = YOLO(detect_model_path, task = 'detect')
