@@ -2,7 +2,11 @@ datasets/
 YOLO-detect-v3/
 YOLO-freeze-v2/
 YOLO-head/
+YOLO-head-v2/
 YOLO-s/
 YOLO-segment-v3/
 runs/
 grocery-detect-venv/
+
+yolo11n.pt
+yolo11s.pt

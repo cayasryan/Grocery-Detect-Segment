@@ -166,11 +166,10 @@ with gr.Blocks(css=css) as demo:
                 value="Detection",
                 label="Mode"
             )
-            fps_display = gr.Textbox(label="FPS", interactive=False)
         with gr.Column(scale=3):
             input_img = gr.Image(sources=["webcam"], type="numpy", streaming=True)
 
-    input_img.stream(process_image, [input_img, conf_threshold, mode], [input_img, fps_display], stream_every=0.01)
+    input_img.stream(process_image, [input_img, conf_threshold, mode], [input_img], stream_every=0.033)
 
 if __name__ == "__main__":
     demo.launch()
