@@ -179,7 +179,7 @@ with gr.Blocks(css=css) as demo:
         with gr.Row():
             input_img = gr.Image(sources=["webcam"], type="numpy", streaming=True)
 
-    input_img.stream(process_image, [input_img, conf_threshold, mode], [input_img], stream_every=0.033)
+    input_img.stream(process_image, [input_img, conf_threshold, mode], [input_img], stream_every=0.075)
 
 if __name__ == "__main__":
-    demo.launch()
+    demo.launch(server_port=2888)
