@@ -99,8 +99,6 @@ def segmentation(image, conf_threshold=0.3):
     if image is None or image.size == 0:
         return image, 0.0
 
-    # start_time = time.time()
-    
     # Convert the image to RGB format
     frame_rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
     
@@ -128,9 +126,16 @@ def segmentation(image, conf_threshold=0.3):
                 mask = mask.cpu().numpy()
                 mask = (mask > 0.5).astype(np.uint8)  # Binarize the mask
                 mask = cv2.resize(mask, (image.shape[1], image.shape[0]))
-                color = (0, 0, 255)  # blue color for the mask
-                contours, _ = cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
-                cv2.drawContours(image, contours, -1, color, thickness=cv2.FILLED)
+                
+                # Define the mask color and transparency
+                color = np.array([0, 0, 255], dtype=np.uint8)  # Blue color for the mask
+                alpha = 0.5  # Set the transparency level (0.0 = fully transparent, 1.0 = fully opaque)
+                
+                # Create a colored mask only where the binary mask is active
+                for c in range(3):  # Iterate over color channels
+                    image[:, :, c] = np.where(mask == 1,
+                                              (1 - alpha) * image[:, :, c] + alpha * color[c],
+                                              image[:, :, c])
 
     end_time = time.time()
     fps = 1 / (end_time - last_frame_time)
