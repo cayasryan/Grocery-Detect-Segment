@@ -10,3 +10,5 @@ grocery-detect-venv/
 
 yolo11n.pt
 yolo11s.pt
+
+.DS_Store
