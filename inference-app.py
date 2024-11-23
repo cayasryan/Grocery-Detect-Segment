@@ -162,8 +162,8 @@ with gr.Blocks(css=css) as demo:
         </h1>
         """
     )
-    with gr.Row():
-        with gr.Column(scale=1):
+    with gr.Column():
+        with gr.Row():
             conf_threshold = gr.Slider(
                 label="Confidence Threshold",
                 minimum=0.0,
@@ -176,10 +176,10 @@ with gr.Blocks(css=css) as demo:
                 value="Detection",
                 label="Mode"
             )
-        with gr.Column(scale=3):
+        with gr.Row():
             input_img = gr.Image(sources=["webcam"], type="numpy", streaming=True)
 
     input_img.stream(process_image, [input_img, conf_threshold, mode], [input_img], stream_every=0.033)
 
 if __name__ == "__main__":
-    demo.launch(server_port=5680)
+    demo.launch()
