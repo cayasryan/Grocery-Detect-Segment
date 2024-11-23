@@ -182,4 +182,4 @@ with gr.Blocks(css=css) as demo:
     input_img.stream(process_image, [input_img, conf_threshold, mode], [input_img], stream_every=0.075)
 
 if __name__ == "__main__":
-    demo.launch(server_port=2888)
+    demo.launch(server_port=8050)
