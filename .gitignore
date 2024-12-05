@@ -11,6 +11,7 @@ grocery-detect-venv/
 YOLO11-full/
 YOLO11-freeze-backbone/
 YOLO11-freeze-all/
+YOLO11x/
 
 yolo11n.pt
 yolo11n-seg.pt

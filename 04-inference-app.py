@@ -10,8 +10,8 @@ import torch
 # detect_model_path = "best_models/YOLOn-head.pt"
 # segment_model_path = "best_models/YOLOn-seg-head.pt"
 
-detect_model_path = "best_models/YOLOs.pt"
-segment_model_path = "best_models/YOLOs-seg.pt"
+detect_model_path = "best_weights/yolo11m-full.pt"
+segment_model_path = "best_weights/yolo11m-seg-full.pt"
 
 
 # Set-up CUDA device
@@ -27,30 +27,30 @@ detect_model = YOLO(detect_model_path, task = 'detect')
 segment_model = YOLO(segment_model_path, task = 'segment')
 
 class_names = [
-  'bottled_soda',        # ID 1
-  'cheese',              # ID 2
-  'chocolate',           # ID 3
-  'coffee',              # ID 4
-  'condensed_milk',      # ID 5
-  'cooking_oil',         # ID 6
-  'corned_beef',         # ID 7
-  'garlic',              # ID 8
-  'instant_noodles',     # ID 9
-  'ketchup',             # ID 10
-  'lemon',               # ID 11
-  'boxed_cream',         # ID 12
-  'mayonnaise',          # ID 13
-  'peanut_butter',       # ID 14
-  'pasta',               # ID 15
-  'pineapple_juice',     # ID 16
-  'crackers',            # ID 17
-  'canned_sardines',     # ID 18
-  'bottled_shampoo',     # ID 19
-  'soap',                # ID 20
-  'soy_sauce',           # ID 21
-  'toothpaste',          # ID 22
-  'canned_tuna',         # ID 23
-  'isopropyl_alcohol'    # ID 24
+  'Bottled Soda',  
+  'Cheese',        
+  'Chocolate',             
+  'Instant Coffee',
+  'Condensed Milk',
+  'Cooking Oil',
+  'Corned Beef',
+  'Garlic',
+  'Instant Noodles',
+  'Ketchup',
+  'Lemon',
+  'All Purpose Cream',
+  'Mayonnaise',
+  'Peanut Butter',
+  'Pasta',
+  'Canned Juice',
+  'Crackers',
+  'Canned Sardines',
+  'Bottled Shampoo',
+  'Soap',
+  'Soy Sauce',
+  'Toothpaste',
+  'Canned Tuna',
+  'Ethyl Alcohol'
 ]
 
 last_frame_time = time.time()
