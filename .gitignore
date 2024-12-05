@@ -6,9 +6,21 @@ YOLO-head-v2/
 YOLO-s/
 YOLO-segment-v3/
 runs/
+previous_runs/
 grocery-detect-venv/
+YOLO11-full/
+YOLO11-freeze-backbone/
+YOLO11-freeze-all/
 
 yolo11n.pt
+yolo11n-seg.pt
 yolo11s.pt
+yolo11s-seg.pt
+yolo11m.pt
+yolo11m-seg.pt
+yolo11l.pt
+yolo11l-seg.pt
+yolo11x.pt
+yolo11x-seg.pt
 
 .DS_Store
