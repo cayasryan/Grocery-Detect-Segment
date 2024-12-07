@@ -24,4 +24,6 @@ yolo11l-seg.pt
 yolo11x.pt
 yolo11x-seg.pt
 
+best_weights/yolo11x-freeze-backbone.pt
+
 .DS_Store

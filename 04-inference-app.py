@@ -6,12 +6,14 @@ import time
 import os
 import torch
 
-# Load the YOLO models
-# detect_model_path = "best_models/YOLOn-head.pt"
-# segment_model_path = "best_models/YOLOn-seg-head.pt"
 
-detect_model_path = "best_weights/yolo11m-full.pt"
-segment_model_path = "best_weights/yolo11m-seg-full.pt"
+# Load the YOLO models
+
+# detect_model_path = "best_weights/yolo11x-freeze-backbone.pt"
+# segment_model_path = "best_weights/yolo11l-seg-freeze-backbone.pt"
+
+detect_model_path = "best_weights/yolo11l-freeze-backbone.pt"
+segment_model_path = "best_weights/yolo11l-seg-freeze-backbone.pt"
 
 
 # Set-up CUDA device
@@ -68,7 +70,7 @@ def detection(image, conf_threshold=0.3):
     frame_rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
     
     # Run inference
-    results = detect_model(frame_rgb, conf=conf_threshold)
+    results = detect_model(frame_rgb, conf=conf_threshold, imgsz=[1088,1920])
     
     # Make the image writable
     image = image.copy()
@@ -103,7 +105,7 @@ def segmentation(image, conf_threshold=0.3):
     frame_rgb = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
     
     # Run inference
-    results = segment_model(frame_rgb, conf=conf_threshold)
+    results = segment_model(frame_rgb, conf=conf_threshold, imgsz=[1088,1920])
     
     # Make the image writable
     image = image.copy()
@@ -169,7 +171,7 @@ with gr.Blocks(css=css) as demo:
                 minimum=0.0,
                 maximum=1.0,
                 step=0.05,
-                value=0.30,
+                value=0.50,
             )
             mode = gr.Radio(
                 choices=["Detection", "Segmentation"],
