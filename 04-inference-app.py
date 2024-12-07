@@ -19,7 +19,7 @@ segment_model_path = "best_weights/yolo11l-seg-freeze-backbone.pt"
 # Set-up CUDA device
 os.environ["CUDA_DEVICE_ORDER"]="PCI_BUS_ID" 
 # use a specific GPU
-os.environ["CUDA_VISIBLE_DEVICES"]="4"
+os.environ["CUDA_VISIBLE_DEVICES"]="6"
 
 # Use GPU for inference
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -184,4 +184,4 @@ with gr.Blocks(css=css) as demo:
     input_img.stream(process_image, [input_img, conf_threshold, mode], [input_img], stream_every=0.075)
 
 if __name__ == "__main__":
-    demo.launch(server_port=8050)
+    demo.launch(server_port=8051)
