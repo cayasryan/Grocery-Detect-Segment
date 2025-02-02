@@ -3,6 +3,3 @@ ultralytics
 gradio>=5.0
 gradio-webrtc
 numpy
-# onnxruntime-gpu
-# onnxruntime
-# git+https://github.com/arsenyinfo/EnlightenGAN-inference
