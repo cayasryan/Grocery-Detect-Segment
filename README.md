@@ -25,7 +25,7 @@ python 04-inference-app.py</code></pre>
 <p>For inquiries about the dataset and implementation, reach out at <span>rcayas</span>&#64;<span>up</span>&#46;<span>edu</span>&#46;<span>ph</span>.</p>
 
 ## Project and Dataset Overview 
-<img width="1794" alt="image" src="https://github.com/user-attachments/assets/1d82bf55-e1e9-4f7b-9cfa-fc9cf10dbf39" />
+<img width="1793" alt="image" src="https://github.com/user-attachments/assets/4c4effd1-1c58-4b3e-a3d3-c95efce8a050" />
 
 ## Development Process
 <img width="1793" alt="image" src="https://github.com/user-attachments/assets/418c4fd9-b113-437a-8165-a8cf02204f6a" />
